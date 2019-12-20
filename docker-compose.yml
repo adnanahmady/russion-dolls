@@ -1,0 +1,36 @@
+version: "3.1"
+
+services:
+  app:
+    image: adnanahmady/php:1.0.4
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    environment:
+      DB_HOST: database
+      DB_PORT: 5432
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    ports:
+      - 8888:80
+    links:
+      - database
+      - redis
+    command: bash -c "php artisan serve --port=80 --host=172.24.0.4"
+
+  redis:
+    image: redis:5.0
+    expose:
+      - 6379
+
+  database:
+    image: postgres:10.5
+    environment:
+      POSTGRES_USER: homestead
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: homestead
+  
+  adminer:
+    image: adminer
+    ports:
+      - 8083:8080
