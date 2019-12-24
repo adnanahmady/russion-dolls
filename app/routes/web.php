@@ -11,8 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    $visites = \Illuminate\Support\Facades\Redis::incr('visites');
-
-    return $visites;
-});
+Route::get('/', 'CardsController@index');
