@@ -2,12 +2,11 @@
 
 namespace App;
 
-use App\Custom\Traits\Cachable;
 use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
 {
-    use Cachable;
+    use \RD\Traits\Cacheable;
 
     protected $touches = ['card'];
 

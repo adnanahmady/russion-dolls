@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        RD\RDServiceProvider::class,
 
         /*
          * Application Service Providers...

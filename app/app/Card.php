@@ -2,12 +2,11 @@
 
 namespace App;
 
-use App\Custom\Traits\Cachable;
 use Illuminate\Database\Eloquent\Model;
 
 class Card extends Model
 {
-    use Cachable;
+    use \RD\Traits\Cacheable;
 
     public function notes()
     {
