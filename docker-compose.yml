@@ -11,7 +11,7 @@ services:
       - 8888:80
 
   app:
-    image: adnanahmady/php:1.0.4
+    image: adnanahmady/php:1.0.5
     working_dir: /app
     volumes:
       - ./app:/app
